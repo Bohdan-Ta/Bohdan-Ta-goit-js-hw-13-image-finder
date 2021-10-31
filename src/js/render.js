@@ -6,11 +6,11 @@ const imageApiService = new ImageApiService();
 
 refs.searchInput.addEventListener('submit', onSearch)
 
-function onSearch(e) {
-    e.preventDefault();
+function onSearch(evt) {
+    evt.preventDefault();
 
     clearImagesGallery()
-    imageApiService.query = e.currentTarget.elements.query.value;
+    imageApiService.query = evt.currentTarget.elements.query.value;
     imageApiService.resetPage();
     imageApiService.fetchImages().then(appendImagesMarkup);
 }
